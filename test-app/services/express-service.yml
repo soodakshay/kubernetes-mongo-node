@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: express-service
+spec:
+  selector:
+    app: express-test
+    tier: backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: expressport
+      name: expressport
+    - protocol: TCP
+      port: 27017
+      targetPort: mongoport
+      name: mongoport
+  type: LoadBalancer
