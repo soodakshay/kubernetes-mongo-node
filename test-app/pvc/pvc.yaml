@@ -3,6 +3,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-pv-claim
 spec:
+  nodeSelector:
+        kubernetes.io/hostname: instance-1
   accessModes:
     - ReadWriteOnce
   resources:
