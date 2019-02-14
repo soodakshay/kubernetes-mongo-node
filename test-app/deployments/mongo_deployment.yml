@@ -14,6 +14,8 @@ spec:
         tier: database
         track: stable
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: instance-1
       containers:
         - name: mongo
           image: "akshaysood112/mongo:v2"
